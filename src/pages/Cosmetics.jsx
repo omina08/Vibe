@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaCcVisa, FaCcMastercard, FaCcPaypal } from "react-icons/fa";
-import {  SiClickhouse } from "react-icons/si"; 
+import { SiClickhouse } from "react-icons/si";
 
 const Cosmetics = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -24,12 +24,13 @@ const Cosmetics = () => {
   ];
 
   return (
-    <div className="text-gray-700 bg-gray-900 px-10 py-16">
-      <h1 className="text-3xl font-semibold text-center mb-10">
+    <div className="text-gray-700 bg-gray-900 px-4 sm:px-6 md:px-10 py-16">
+      <h1 className="text-2xl sm:text-3xl font-semibold text-center mb-10">
         УХОДОВЫЕ <span className="text-[#C88C61] font-light">СРЕДСТВА</span>
       </h1>
 
-      <div className="grid grid-cols-3 gap-8 max-w-5xl mx-auto">
+      {/* Grid responsive */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
         {products.map((item) => (
           <div
             key={item.id}
@@ -38,13 +39,13 @@ const Cosmetics = () => {
             <img
               src={item.img}
               alt={item.name}
-              className="w-40 h-40 mx-auto mb-4 object-contain"
+              className="w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-4 object-contain"
             />
             <h2 className="font-semibold mb-2">{item.name}</h2>
             <p className="text-[#C88C61] font-bold mb-4">{item.price}</p>
             <button
               onClick={() => setSelectedProduct(item)}
-              className="bg-[#C88C61] text-white py-2 px-6 rounded-md hover:bg-[#EBBE9C]"
+              className="bg-[#C88C61] text-white py-2 px-6 rounded-md hover:bg-[#EBBE9C] text-sm sm:text-base"
             >
               Купить
             </button>
@@ -54,21 +55,21 @@ const Cosmetics = () => {
 
       {/* Modal */}
       {selectedProduct && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white rounded-xl p-8 w-[400px] shadow-lg relative">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 px-3">
+          <div className="bg-white rounded-xl p-6 sm:p-8 w-[90%] max-w-sm sm:max-w-md shadow-lg relative">
             <button
               onClick={() => setSelectedProduct(null)}
               className="absolute top-2 right-3 text-gray-500 hover:text-black text-xl"
             >
               ✕
             </button>
-            <h2 className="text-2xl font-semibold mb-4">Оплата товара</h2>
+            <h2 className="text-xl sm:text-2xl font-semibold mb-4">Оплата товара</h2>
 
             <div className="flex items-center gap-4 mb-4">
               <img
                 src={selectedProduct.img}
                 alt={selectedProduct.name}
-                className="w-20 h-20 object-contain"
+                className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
               />
               <div>
                 <p className="font-semibold">{selectedProduct.name}</p>
@@ -77,7 +78,7 @@ const Cosmetics = () => {
             </div>
 
             {/* Karta variantlari */}
-            <div className="flex justify-center gap-4 text-4xl mb-6 text-gray-600">
+            <div className="flex justify-center gap-4 text-3xl sm:text-4xl mb-6 text-gray-600">
               <FaCcVisa className="hover:text-blue-600 cursor-pointer" />
               <FaCcMastercard className="hover:text-red-600 cursor-pointer" />
               <FaCcPaypal className="hover:text-blue-400 cursor-pointer" />

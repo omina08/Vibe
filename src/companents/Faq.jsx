@@ -5,7 +5,7 @@ const Faq = () => {
   const [open, setOpen] = useState(null);
   const { t, i18n } = useTranslation();
 
-  // Bu joyda arrayni to'g'ri olish uchun JSON-dan massivni chiqarib olyapmiz
+  // JSON-dan massivni olamiz
   const faqs = t("faqs", { returnObjects: true });
 
   return (
@@ -17,24 +17,9 @@ const Faq = () => {
 
       {/* Til tugmalari */}
       <div className="flex justify-center gap-4 mb-6">
-        <button
-          onClick={() => i18n.changeLanguage("uz")}
-          className="px-3 py-1 bg-orange-200 rounded"
-        >
-          UZ
-        </button>
-        <button
-          onClick={() => i18n.changeLanguage("ru")}
-          className="px-3 py-1 bg-orange-200 rounded"
-        >
-          RU
-        </button>
-        <button
-          onClick={() => i18n.changeLanguage("en")}
-          className="px-3 py-1 bg-orange-200 rounded"
-        >
-          EN
-        </button>
+        <button onClick={() => i18n.changeLanguage("uz")} className="px-3 py-1 bg-orange-200 rounded">UZ</button>
+        <button onClick={() => i18n.changeLanguage("ru")} className="px-3 py-1 bg-orange-200 rounded">RU</button>
+        <button onClick={() => i18n.changeLanguage("en")} className="px-3 py-1 bg-orange-200 rounded">EN</button>
       </div>
 
       {/* Savollar ro'yxati */}
@@ -43,16 +28,16 @@ const Faq = () => {
           faqs.map((q, i) => (
             <div
               key={i}
-              className="flex justify-between items-center border-b pb-2 cursor-pointer"
+              className="flex justify-between items-center border-b pb-2 cursor-pointer transition-all"
               onClick={() => setOpen(open === i ? null : i)}
             >
               <p className="text-gray-700">{q}</p>
               <img
-                src={`https://img.icons8.com/ios-glyphs/24/chevron-${
-                  open === i ? "up" : "down"
-                }.png`}
+                src={`https://img.icons8.com/ios-glyphs/24/chevron-${open === i ? "up" : "down"}.png`}
                 alt="toggle"
-                className="ml-4 w-6 bg-[#E9C9C2] rounded-3xl p-1"
+                className={`ml-4 w-6 bg-[#E9C9C2] rounded-3xl p-1 transition-transform duration-300 ${
+                  open === i ? "rotate-180" : "rotate-0"
+                }`}
               />
             </div>
           ))}

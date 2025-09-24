@@ -6,51 +6,55 @@ const Kworking = () => {
 
   return (
     <div className="bg-gray-900">
-      <div className="bg-[url('/bgimg.png')] bg-center bg-cover text-white h-[765px]">
-        <h1 className="text-5xl text-center font-light pb-4 pt-10">
+      <div className="bg-[url('/bgimg.png')] bg-center bg-cover text-white py-10">
+        <h1 className="text-3xl md:text-5xl text-center font-light">
           {t("kworking.title")}
         </h1>
 
-        {/* Form */}
-        <div className="w-[400px] h-[450px] bg-white p-6 rounded-lg text-black mt-[80px] ml-[300px] absolute">
-          <h2 className="text-2xl font-medium mb-2 text-center mt-7">
-            {t("kworking.subtitle")}
-          </h2>
-          <h3 className="text-md font-light mb-4 text-center">
-            {t("kworking.desc")}
-          </h3>
+        <div className="flex flex-col md:flex-row items-center justify-center gap-10 mt-10 px-4">
+          {/* Form */}
+          <div className="w-full max-w-sm bg-white p-6 rounded-lg text-black shadow-lg">
+            <h2 className="text-xl md:text-2xl font-medium mb-2 text-center mt-3">
+              {t("kworking.subtitle")}
+            </h2>
+            <h3 className="text-sm md:text-md font-light mb-4 text-center">
+              {t("kworking.desc")}
+            </h3>
 
-          <div className="flex items-center w-[333px] h-[70px] ml-[50px]">
-            <div className="bg-[#C88C61] rounded-[300px]">
-              <img
-                className="rounded-s-md py-2 px-2 w-9"
-                src="https://img.icons8.com/windows/50/FFFFFF/phone.png"
-                alt="phone"
+            <div className="flex items-center w-full mb-4">
+              <div className="bg-[#C88C61] rounded-l-md flex items-center justify-center p-2">
+                <img
+                  className="w-6 h-6"
+                  src="https://img.icons8.com/windows/50/FFFFFF/phone.png"
+                  alt="phone"
+                />
+              </div>
+              <input
+                className="flex-1 py-3 px-4 rounded-r-md text-gray-700 bg-white border border-gray-300"
+                type="text"
+                placeholder={t("kworking.placeholder")}
               />
             </div>
-            <input
-              className="p-1 py-3 rounded-e-md text-gray-700 px-5 bg-white"
-              type="text"
-              placeholder={t("kworking.placeholder")}
-            />
+
+            <button className="w-full h-14 text-white bg-[#C88C61] rounded-md transition hover:bg-[#EBBE9C] mb-4">
+              {t("kworking.button")}
+            </button>
+
+            <p className="text-xs text-gray-700 text-center">
+              {t("kworking.privacy")}{" "}
+              <span className="text-[#C88C61]">{t("kworking.terms")}</span>
+            </p>
           </div>
 
-          <button className="mt-6 h-20 w-64 text-white bg-[#C88C61] rounded-md transition hover:bg-[#EBBE9C] ml-[50px] mb-4">
-            {t("kworking.button")}
-          </button>
-
-          <h1 className="ml-[50px] text-xs text-gray-700">
-            {t("kworking.privacy")}{" "}
-            <span className="text-[#C88C61]">{t("kworking.terms")}</span>
-          </h1>
+          {/* Right side image */}
+          <div className="w-full max-w-sm">
+            <img
+              className="w-full object-contain"
+              src="/curlygirl.png"
+              alt="curly girl"
+            />
+          </div>
         </div>
-
-        {/* Right side image */}
-        <img
-          className="relative w-[500px] left-[650px]"
-          src="/curlygirl.png"
-          alt="curly girl"
-        />
       </div>
     </div>
   );

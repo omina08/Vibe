@@ -24,7 +24,7 @@ const Byuti = () => {
             {t("byuti.subtitle")}
           </h1>
 
-          <div className='flex items-center w-[333px] h-[70px] '>
+          <div className='flex items-center w-[333px] h-[70px]'>
             <img className='bg-white rounded-s-md py-2 items-center text-center' src="/phone.png" alt="" />
             <input
               className='p-1 py-3 rounded-e-md text-gray-700 px-5 bg-white'
@@ -39,8 +39,9 @@ const Byuti = () => {
         </div>
 
         <img className='relative left-52 w-36 z-10 bottom-20 hover:scale-105' src="/button play.png" alt="" />
-        <img className=' absolute right-10 top-14 w-[700px]' src="/chair.png" alt="" />
+        <img className='absolute right-10 top-14 w-[700px]' src="/chair.png" alt="" />
       </div>
+
       <div className='h-20 bg-[#363348]'></div>
     </>
   )
