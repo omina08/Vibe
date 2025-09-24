@@ -17,10 +17,10 @@ const Navbar = () => {
       <div className='h-10 w-[1px] bg-[#C88C61]'></div>
       </div>
         <ul className='flex gap-10'>
-            <Link  to="/nas" ><li className='hover:border-b-[#C88C61] hover:border-b'>{t}</li></Link>
-            <Link  to="/narx" ><li className='hover:border-b-[#C88C61] hover:border-b'>{t}</li></Link>
-            <Link  to="/bron" ><li className='hover:border-b-[#C88C61] hover:border-b'>{t}</li></Link>
-            <Link  to="/con" ><li className='hover:border-b-[#C88C61] hover:border-b'>{t}</li></Link>
+            <Link  to="/nas" ><li className='hover:border-b-[#C88C61] hover:border-b'>О нас</li></Link>
+            <Link  to="/narx" ><li className='hover:border-b-[#C88C61] hover:border-b'>Цены</li></Link>
+            <Link  to="/bron" ><li className='hover:border-b-[#C88C61] hover:border-b'>Забронировать</li></Link>
+            <Link  to="/con" ><li className='hover:border-b-[#C88C61] hover:border-b'>Косметика</li></Link>
         </ul>
         <div className='flex gap-10'>
             <h1>+7 (654) 876 09 09</h1>

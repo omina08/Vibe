@@ -36,7 +36,7 @@ const Bron = () => {
               <h1 className="block mb-2 ml-2 mt-2 font-medium text-gray-700">
               Your Name
             </h1>
-              <input {...register("name", {required : true , minLength:4, maxLength:15})} className=" p-3  rounded-3xl focus:outline-none bg-gray-200" type="text" placeholder="John Doe"/>
+              <input {...register("name", {required : true , minLength:4, maxLength:15})} className=" p-3  rounded-3xl focus:outline-none bg-gray-200" type="text" placeholder="Angelina Doe"/>
                {
               errors.name?.type == "required"  ? <h1 className='text-red-400'>You must be fill</h1> : 
               errors.name?.type == "minLength" ? <h1 className='text-red-400'>You should enter at list 4 letters</h1> : 

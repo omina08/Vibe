@@ -14,7 +14,7 @@ const Kworking = () => {
      <div className='bg-[#C88C61] rounded-[300px]'>
      <img className=' rounded-s-md py-2 px-2 items-center text-center w-9' src="https://img.icons8.com/windows/50/FFFFFF/phone.png" alt="" />
      </div>
-        <input className='p-1 py-3 rounded-e-md text-gray-700 px-5 '  type="text" placeholder='+7 (___) ___ - __ -__' />
+        <input className='p-1 py-3 rounded-e-md text-gray-700 px-5 bg-white'  type="text" placeholder='+7 (___) ___ - __ -__' />
        </div>
     <button className="mt-6 h-20 w-64 text-white bg-[#C88C61] rounded-md transition hover:bg-[#EBBE9C] ml-[50px]  mb-4">
     ВЫБРАТЬ ПОМЕЩЕНИЕ

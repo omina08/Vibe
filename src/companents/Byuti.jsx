@@ -11,7 +11,7 @@ const Byuti = () => {
        <h1 className='text-xl mb-4'>Оплачивайте только реальные часы <br /> работы с клиентом, никаких затрат</h1>
        <div className='flex items-center w-[333px] h-[70px] '>
        <img className='bg-white rounded-s-md py-2 items-center text-center' src="/phone.png" alt="" />
-        <input className='p-1 py-3 rounded-e-md text-gray-700 px-5 '  type="text" placeholder='+7 (___) ___ - __ -__' />
+        <input className='p-1 py-3 rounded-e-md text-gray-700 px-5 bg-white'  type="text" placeholder='+7 (___) ___ - __ -__' />
        </div>
        <button className='p-1 py-3 px-9 text-white rounded-md bg-[#C88C61] items-center hover:bg-[#EBBE9C]'>ЗАБРОНИРОВАТЬ ВРЕМЯ</button>
       </div>

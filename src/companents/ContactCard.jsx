@@ -27,7 +27,7 @@ const ContactCard = () => {
             <input
               type="tel"
               placeholder="+7 (___) ___-__-__"
-              className="flex-1 p-2 outline-none"
+              className="flex-1 p-2 outline-none bg-white"
             />
           </div>
 
