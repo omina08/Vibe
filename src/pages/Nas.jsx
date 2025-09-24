@@ -1,4 +1,5 @@
 import React from "react";
+import { FaUserTie, FaDoorOpen, FaWifi, FaShieldAlt } from "react-icons/fa";
 
 const Nas = () => {
   return (
@@ -39,10 +40,54 @@ const Nas = () => {
           </div>
         </div>
       </div>
+
+      {/* Qo‘shimcha blok - statistika */}
+      <div className="bg-[#2F2C3E] text-white px-40 py-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <h3 className="text-4xl font-bold text-[#C88C61]">50+</h3>
+          <p className="mt-2 text-sm">Специалистов</p>
+        </div>
+        <div>
+          <h3 className="text-4xl font-bold text-[#C88C61]">1000+</h3>
+          <p className="mt-2 text-sm">Довольных клиентов</p>
+        </div>
+        <div>
+          <h3 className="text-4xl font-bold text-[#C88C61]">10</h3>
+          <p className="mt-2 text-sm">Кабинетов</p>
+        </div>
+        <div>
+          <h3 className="text-4xl font-bold text-[#C88C61]">24/7</h3>
+          <p className="mt-2 text-sm">Доступ</p>
+        </div>
+      </div>
+
+      {/* Qo‘shimcha blok - afzalliklar */}
+      <div className="bg-[#363348] text-white px-40 py-20 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="flex flex-col items-center text-center">
+          <FaUserTie className="text-4xl text-[#C88C61] mb-4" />
+          <h4 className="text-lg font-semibold mb-2">Администратор</h4>
+          <p className="text-sm">Всегда готов помочь и поддержать специалистов</p>
+        </div>
+        <div className="flex flex-col items-center text-center">
+          <FaDoorOpen className="text-4xl text-[#C88C61] mb-4" />
+          <h4 className="text-lg font-semibold mb-2">Удобные кабинеты</h4>
+          <p className="text-sm">Комфортное пространство для вашей работы</p>
+        </div>
+        <div className="flex flex-col items-center text-center">
+          <FaWifi className="text-4xl text-[#C88C61] mb-4" />
+          <h4 className="text-lg font-semibold mb-2">Wi-Fi</h4>
+          <p className="text-sm">Быстрый интернет для работы и клиентов</p>
+        </div>
+        <div className="flex flex-col items-center text-center">
+          <FaShieldAlt className="text-4xl text-[#C88C61] mb-4" />
+          <h4 className="text-lg font-semibold mb-2">Безопасность</h4>
+          <p className="text-sm">Охрана и круглосуточное видеонаблюдение</p>
+        </div>
+      </div>
+
       <div className="h-20 bg-[#363348]"></div>
     </>
   )
 }
 
 export default Nas
-

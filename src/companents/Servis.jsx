@@ -1,76 +1,64 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 const Servis = () => {
+  const { t } = useTranslation()
+
+  const services = [
+    {
+      title: t("service.lockers.title"),
+      desc: t("service.lockers.desc"),
+    },
+    {
+      title: t("service.supplies.title"),
+      desc: t("service.supplies.desc"),
+    },
+    {
+      title: t("service.wifi.title"),
+      desc: t("service.wifi.desc"),
+    },
+    {
+      title: t("service.parking.title"),
+      desc: t("service.parking.desc"),
+    },
+    {
+      title: t("service.light.title"),
+      desc: t("service.light.desc"),
+    },
+    {
+      title: t("service.admin.title"),
+      desc: t("service.admin.desc"),
+    },
+  ]
+
   return (
-    <div className='mt-[100px] h-[1000px]'>
-      <div>
-        <h1 className='text-4xl text-center font-light'>КАКИЕ ЕЩЁ  <span className='text-[#C88C61] mb-7'>  СЕРВИСНЫЕ УДОБСТВА </span> МЫ <br /> СОЗДАЛИ ДЛЯ ВАС И ВАШИХ КЛИЕНТОВ?
-        </h1>
-        <img className='absolute right-0 w-[300px]' src="/flower.png" alt="" />
-        <div className='w-[1000px] flex flex-wrap  justify-center ml-[270px] relative'>
-        <div className='mt-28 '>
-              <img className="w-16 " src="/icon (2).png" alt="" />
-              <p className="font-semibold flex items-center gap-2 ml-1 mt-2 text-xl"> 
-              Ящики с замком для <br /> хранения вещей
-              </p>
-              <p className="mt-1 ml-1">
-              Оставляйте все <br /> необходимое — защиту <br /> гарантируем
-              </p>
-            </div> 
+    <div className="mt-[100px] relative px-6">
+      <h1 className="text-4xl text-center font-light">
+        {t("service.header.part1")}{" "}
+        <span className="text-[#C88C61]">{t("service.header.highlight")}</span>{" "}
+        {t("service.header.part2")}
+      </h1>
 
+      <img
+        className="absolute right-0 w-[250px] top-10 opacity-80"
+        src="/flower.png"
+        alt="flower"
+      />
 
-            <div className='mt-28 ml-[100px]'>
-              <img className="w-16 " src="/icon (2).png" alt="" />
-              <p className="font-semibold flex items-center gap-2 ml-1 mt-2 text-xl"> 
-              Возможность покупки <br /> расходников
-              </p>
-              <p className="mt-1 ml-1">
-              Администратор сделает <br /> заказ любых средств <br /> различных торговых <br /> марок
-              </p>
-            </div> 
+      <div className="mt-20 max-w-6xl mx-auto grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
+        {services.map((item, idx) => (
+          <div key={idx} className="flex flex-col items-start">
+            <img className="w-16" src="/icon (2).png" alt="icon" />
+            <p className="font-semibold mt-3 text-xl">{item.title}</p>
+            <p className="mt-2 text-gray-200">{item.desc}</p>
+          </div>
+        ))}
+      </div>
 
-            <div className='mt-28 ml-[100px]'>
-              <img className="w-16 " src="/icon (2).png" alt="" />
-              <p className="font-semibold flex items-center gap-2 ml-1 mt-2 text-xl"> 
-              Безлимитный Wi-Fi, <br /> чай и кофе для вас <br /> и клиентов
-              </p>
-              <p className="mt-1 ml-1">
-              Всегда есть, чем заняться <br /> в перерывах
-
-              </p>
-            </div> 
-
-            <div className='mt-28 ml-[70px]'>
-              <img className="w-16 " src="/icon (2).png" alt="" />
-              <p className="font-semibold flex items-center gap-2 ml-1 mt-2 text-xl"> 
-              Удобная парковка <br /> для вас и ваших <br /> клиентов
-              </p>
-              <p className="mt-1 ml-1">
-              Возле салона, есть большое <br /> пространство для парковки <br /> личного автомобиля
-              </p>
-            </div> 
-
-            <div className='mt-28 ml-[150px]'>
-              <img className="w-16 " src="/icon (2).png" alt="" />
-              <p className="font-semibold flex items-center gap-2 ml-1 mt-2 text-xl"> 
-              Профессиональный  <br />свет для фотосъемки
-              </p>
-              <p className="mt-1 ml-1">
-              С техникой разберется <br /> даже новичок, а снимки <br /> точно получатся
-              </p>
-            </div> 
-
-            <div className='mt-28 ml-[150px]'>
-              <img className="w-16 " src="/icon (2).png" alt="" />
-              <p className="font-semibold flex items-center gap-2 ml-1 mt-2 text-xl"> 
-              Услуги <br /> администратора
-              </p>
-              <p className="mt-1 ml-1">
-              Оставляйте все <br /> необходимое — защиту <br /> гарантируем
-              </p>
-            </div> 
-        </div>
-        <button className='p-1 py-4  px-9 text-white rounded-md bg-[#C88C61] items-center hover:bg-[#EBBE9C] ml-[690px] mt-10'>ЗАБРОНИРОВАТЬ ВРЕМЯ</button>
+      <div className="flex justify-center mt-12">
+        <button className="py-4 px-9 text-white rounded-md bg-[#C88C61] hover:bg-[#EBBE9C]">
+          {t("service.button")}
+        </button>
       </div>
     </div>
   )
