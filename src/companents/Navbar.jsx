@@ -47,7 +47,7 @@ const Navbar = () => {
           </h1>
           <select
             onChange={(e) => changeLanguage(e.target.value)}
-            className="rounded-md p-1 px-2 bg-gray-700 h-[40px] w-[100px]"
+            className="rounded-md p-1 px-2 bg-gray-700 h-[40px] w-[100px] "
           >
             <option value="uz">Uzbek</option>
             <option value="ru">Русский</option>
@@ -66,21 +66,21 @@ const Navbar = () => {
 
       {/* Mobil menu */}
       {isOpen && (
-        <div className="md:hidden mt-4 space-y-3 flex flex-col text-white text-sm">
-          <Link to="/nas" className="hover:text-[#C88C61]">
+        <div className="md:hidden mt-4 space-y-3 flex flex-col items-start text-white text-sm">
+          <Link to="/nas" className="hover:text-[#C88C61] w-full">
             {t("navbar.about")}
           </Link>
-          <Link to="/narx" className="hover:text-[#C88C61]">
+          <Link to="/narx" className="hover:text-[#C88C61] w-full">
             {t("navbar.prices")}
           </Link>
-          <Link to="/bron" className="hover:text-[#C88C61]">
+          <Link to="/bron" className="hover:text-[#C88C61] w-full">
             {t("navbar.booking")}
           </Link>
-          <Link to="/con" className="hover:text-[#C88C61]">
+          <Link to="/con" className="hover:text-[#C88C61] w-full">
             {t("navbar.cosmetics")}
           </Link>
-          <h1>{t("navbar.phone_number")}</h1>
-          <h1 className="flex gap-1 items-center">
+          <h1 className="w-full">{t("navbar.phone_number")}</h1>
+          <h1 className="flex gap-1 items-center w-full">
             <img src="/phone.png" alt="phone" className="w-4 h-4" />
             <span className="text-[#C88C61] border-b border-dashed border-[#C88C61]">
               {t("navbar.callback")}
@@ -88,7 +88,7 @@ const Navbar = () => {
           </h1>
           <select
             onChange={(e) => changeLanguage(e.target.value)}
-            className="rounded-md p-1 px-2  bg-gray-700"
+            className="rounded-md py-1 px-2 inline bg-gray-700"
           >
             <option value="uz">Uzbek</option>
             <option value="ru">Русский</option>
