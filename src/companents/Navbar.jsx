@@ -47,7 +47,7 @@ const Navbar = () => {
           </h1>
           <select
             onChange={(e) => changeLanguage(e.target.value)}
-            className="rounded-md p-1 px-2 bg-gray-700"
+            className="rounded-md p-1 px-2 bg-gray-700 h-[40px] w-[100px]"
           >
             <option value="uz">Uzbek</option>
             <option value="ru">Русский</option>
@@ -88,7 +88,7 @@ const Navbar = () => {
           </h1>
           <select
             onChange={(e) => changeLanguage(e.target.value)}
-            className="rounded-md p-1 px-2 bg-gray-700"
+            className="rounded-md p-1 px-2  bg-gray-700"
           >
             <option value="uz">Uzbek</option>
             <option value="ru">Русский</option>

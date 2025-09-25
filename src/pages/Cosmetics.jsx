@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { FaCcVisa, FaCcMastercard, FaCcPaypal } from "react-icons/fa";
 import { SiClickhouse } from "react-icons/si";
 
 const Cosmetics = () => {
+  const { t } = useTranslation();
   const [selectedProduct, setSelectedProduct] = useState(null);
 
-  const products = [
+const products = [
     { id: 1, name: "L'Oréal Skin Care", price: "₽1500", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_-aHo9R1U_YwBiZzAMo8M8lkrjaq6MST_Lg&s" },
     { id: 2, name: "Dior Face Cream", price: "₽3200", img: "https://i.makeup.kz/e/ef/efk80n6qv8x2.jpg" },
     { id: 3, name: "Clinique Cleanser", price: "₽2100", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdbcW71OQnRNNWmfrVEaduvwmzLCPBQ6N8sQ&s" },
@@ -21,15 +23,14 @@ const Cosmetics = () => {
     { id: 13, name: "Avene Thermal Spring", price: "₽1800", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-n975YZUoWhnatb_G7FhLF5mLxD-Sw-rIbQ&s" },
     { id: 14, name: "Kiehl’s Ultra Facial", price: "₽3500", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRICxMtr2MNoljlAuySIZms8Fk0AVFydvcEng&s" },
     { id: 15, name: "Garnier Micellar", price: "₽900", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNlbjKUz3lGAuyCw6ydTcWNCExwDJduEuQqw&s" },
-  ];
+  ]
 
   return (
     <div className="text-gray-700 bg-gray-900 px-4 sm:px-6 md:px-10 py-16">
       <h1 className="text-2xl sm:text-3xl font-semibold text-center mb-10">
-        УХОДОВЫЕ <span className="text-[#C88C61] font-light">СРЕДСТВА</span>
+        {t("cosmetics.title1")} <span className="text-[#C88C61] font-light">{t("cosmetics.title2")}</span>
       </h1>
 
-      {/* Grid responsive */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
         {products.map((item) => (
           <div
@@ -38,22 +39,21 @@ const Cosmetics = () => {
           >
             <img
               src={item.img}
-              alt={item.name}
+              alt={t(item.nameKey)}
               className="w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-4 object-contain"
             />
-            <h2 className="font-semibold mb-2">{item.name}</h2>
-            <p className="text-[#C88C61] font-bold mb-4">{item.price}</p>
+            <h2 className="font-semibold mb-2">{t(item.nameKey)}</h2>
+            <p className="text-[#C88C61] font-bold mb-4">{t(item.priceKey)}</p>
             <button
               onClick={() => setSelectedProduct(item)}
               className="bg-[#C88C61] text-white py-2 px-6 rounded-md hover:bg-[#EBBE9C] text-sm sm:text-base"
             >
-              Купить
+              {t("cosmetics.buy")}
             </button>
           </div>
         ))}
       </div>
 
-      {/* Modal */}
       {selectedProduct && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 px-3">
           <div className="bg-white rounded-xl p-6 sm:p-8 w-[90%] max-w-sm sm:max-w-md shadow-lg relative">
@@ -63,21 +63,20 @@ const Cosmetics = () => {
             >
               ✕
             </button>
-            <h2 className="text-xl sm:text-2xl font-semibold mb-4">Оплата товара</h2>
+            <h2 className="text-xl sm:text-2xl font-semibold mb-4">{t("cosmetics.modal.title")}</h2>
 
             <div className="flex items-center gap-4 mb-4">
               <img
                 src={selectedProduct.img}
-                alt={selectedProduct.name}
+                alt={t(selectedProduct.nameKey)}
                 className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
               />
               <div>
-                <p className="font-semibold">{selectedProduct.name}</p>
-                <p className="text-[#C88C61] font-bold">{selectedProduct.price}</p>
+                <p className="font-semibold">{t(selectedProduct.nameKey)}</p>
+                <p className="text-[#C88C61] font-bold">{t(selectedProduct.priceKey)}</p>
               </div>
             </div>
 
-            {/* Karta variantlari */}
             <div className="flex justify-center gap-4 text-3xl sm:text-4xl mb-6 text-gray-600">
               <FaCcVisa className="hover:text-blue-600 cursor-pointer" />
               <FaCcMastercard className="hover:text-red-600 cursor-pointer" />
@@ -88,23 +87,23 @@ const Cosmetics = () => {
             <form className="space-y-3">
               <input
                 type="text"
-                placeholder="Имя Фамилия"
+                placeholder={t("cosmetics.modal.inputName")}
                 className="w-full border rounded-md px-3 py-2"
               />
               <input
                 type="text"
-                placeholder="Номер карты"
+                placeholder={t("cosmetics.modal.inputCard")}
                 className="w-full border rounded-md px-3 py-2"
               />
               <div className="flex gap-2">
                 <input
                   type="text"
-                  placeholder="MM/YY"
+                  placeholder={t("cosmetics.modal.inputMMYY")}
                   className="w-1/2 border rounded-md px-3 py-2"
                 />
                 <input
                   type="text"
-                  placeholder="CVV"
+                  placeholder={t("cosmetics.modal.inputCVV")}
                   className="w-1/2 border rounded-md px-3 py-2"
                 />
               </div>
@@ -112,7 +111,7 @@ const Cosmetics = () => {
                 type="submit"
                 className="w-full bg-[#C88C61] text-white py-2 rounded-md hover:bg-[#EBBE9C]"
               >
-                Оплатить
+                {t("cosmetics.modal.pay")}
               </button>
             </form>
           </div>
@@ -122,4 +121,5 @@ const Cosmetics = () => {
   );
 };
 
-export default Cosmetics;
+export default Cosmetics
+  
